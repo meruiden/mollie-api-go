@@ -244,6 +244,10 @@ type Response struct {
 	content []byte
 }
 
+func (r *Response) GetContent() []byte {
+	return r.content
+}
+
 func newResponse(r *http.Response) (*Response, error) {
 	var res Response
 	c, err := ioutil.ReadAll(r.Body)
